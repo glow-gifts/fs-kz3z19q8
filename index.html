@@ -47,14 +47,14 @@ summary{cursor:pointer;color:var(--pink);font-weight:700}
     <ol>
       <li>開いた画面で「<b>コピーを作成</b>」を押す</li>
       <li>コピーしたフォームの右上「<b>公開</b>」を押して公開する</li>
-      <li>右上の <b>🔗（リンク）</b> マーク →「<b>回答者リンクをコピー</b>」</li>
+      <li>右上の <b>🔗（くさりのマーク）</b> を押す →「回答者へのリンクをコピー」の右下にある「<b>コピー</b>」を押す</li>
     </ol>
     <p class="small">※ コピーしたフォームの回答は、あなたにだけ届きます。</p>
   </section>
 
   <section class="step" id="s2">
     <h2><span class="num">2</span>コピーしたURLを貼る</h2>
-    <p>手順1でコピーした「回答者リンク」をここに貼り付けてください。</p>
+    <p>手順1でコピーしたURLを、ここに貼り付けてください。</p>
     <input type="url" id="form" placeholder="https://docs.google.com/forms/d/e/…/viewform" autocomplete="off">
     <div class="msg" id="msg"></div>
   </section>
@@ -114,7 +114,7 @@ summary{cursor:pointer;color:var(--pink);font-weight:700}
     s3.classList.add('locked');s4.classList.add('locked');area.style.display='none';msg.className='msg';
     if(!v){msg.textContent='';return}
     if(/docs\.google\.com\/forms\/d\/[^\/]+\/(edit|copy)/.test(v)&&!/\/forms\/d\/e\//.test(v)){
-      msg.className='msg ng';msg.textContent='これは編集用のURLです。フォーム右上の🔗マーク →「回答者リンクをコピー」で出てくるURLを貼ってね。';return}
+      msg.className='msg ng';msg.textContent='これは編集用のURLです。フォーム右上の🔗マーク →「コピー」で出てくるURLを貼ってね。';return}
     if(v.indexOf('1RH9FzJa12KweS_xE7hQA9JXQ5O8ZbWyjsMWJy1wvH7E')>=0){
       msg.className='msg ng';msg.textContent='これはコピー元のURLです。手順1で自分用にコピーしたフォームのURLを貼ってね。';return}
     if(!/^https:\/\/(docs\.google\.com\/forms\/|forms\.gle\/)\S+$/.test(v)){
