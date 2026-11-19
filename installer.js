@@ -3,8 +3,8 @@
   var BASE = 'https://glow-gifts.github.io/fs-kz3z19q8/';
   if (document.getElementById('fsx-panel')) return;
 
-  if (location.host !== 'step.lme.jp') {
-    alert('エルメ（step.lme.jp）にログインした画面で、このボタンを押してください。');
+  if (['step.lme.jp', 's.lmes.jp'].indexOf(location.host) < 0) {
+    alert('エルメにログインして「ステップ配信」を開いた画面で、このボタンを押してください。');
     return;
   }
   var FORM = (window.__FS_FORM || '').trim();
