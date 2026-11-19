@@ -21,7 +21,7 @@
   var TK = tokenEl.content, BOT = botEl.value;
   var H = { 'X-CSRF-TOKEN': TK, 'X-Requested-With': 'XMLHttpRequest' };
   var accountName = '';
-  var accEl = document.querySelector('.h__d');
+  var accEl = document.querySelector('.h__dropdown-title-bot-name, .h__qr-account-name');
   if (accEl) accountName = accEl.textContent.trim();
   var DONE_KEY = 'fsx_done_' + BOT;
   var done = {};
