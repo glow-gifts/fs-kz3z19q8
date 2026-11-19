@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>ステップ配信かんたん登録</title>
+<style>
+:root{--bg:#fff8fa;--card:#fff;--ink:#3a2e35;--sub:#7a6871;--pink:#e75a87;--pinkbg:#fdeaf0;--line:#f1dde5;--ok:#2e9b6a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Hiragino Sans","Noto Sans JP",system-ui,sans-serif;line-height:1.8}
+.wrap{max-width:720px;margin:0 auto;padding:32px 16px 80px}
+h1{font-size:26px;line-height:1.4;margin:0 0 8px}
+.lead{color:var(--sub);margin:0 0 24px}
+.pc{background:#fff3cd;border-radius:12px;padding:10px 14px;font-size:14px;margin-bottom:24px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 20px;margin:0 0 18px}
+.step h2{font-size:18px;margin:0 0 10px;display:flex;align-items:center;gap:10px}
+.num{flex:none;width:30px;height:30px;border-radius:50%;background:var(--pink);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:15px}
+.step p,.step li{font-size:15px}
+.step ol{padding-left:1.3em;margin:8px 0}
+.btn{display:inline-block;background:var(--pink);color:#fff;text-decoration:none;border:0;border-radius:999px;padding:12px 22px;font-weight:700;font-size:15px;cursor:pointer}
+.btn.sub{background:#fff;color:var(--pink);border:2px solid var(--pink)}
+input[type=url]{width:100%;font-size:15px;padding:12px 14px;border:2px solid var(--line);border-radius:12px;margin:6px 0}
+input[type=url]:focus{outline:none;border-color:var(--pink)}
+.msg{font-size:14px;margin-top:4px;min-height:1.6em}
+.msg.ng{color:#c0392b}.msg.ok{color:var(--ok)}
+.bm-area{display:none;text-align:center;background:var(--pinkbg);border-radius:14px;padding:20px 14px;margin-top:12px}
+.bm{display:inline-block;background:var(--pink);color:#fff;text-decoration:none;font-weight:700;border-radius:999px;padding:12px 24px;font-size:16px;cursor:grab;box-shadow:0 4px 0 #c94170}
+.small{font-size:13px;color:var(--sub)}
+.kbd{display:inline-block;border:1px solid #ccc;border-bottom-width:2px;border-radius:6px;padding:0 6px;font-size:13px;background:#fff}
+.locked{opacity:.45;pointer-events:none}
+details{margin-top:10px;font-size:14px}
+summary{cursor:pointer;color:var(--pink);font-weight:700}
+.done{background:#eaf7f0;border-color:#cbeedb}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>ファスティングのステップ配信<br>かんたん登録</h1>
+  <p class="lead">アンケートをコピーして、URLを貼って、エルメでボタンを1回押すだけ。<br>ファスティングサポートのLINE配信（13パターン・全269通）が、自分のエルメにまとめて入ります。</p>
+  <div class="pc">💻 パソコンの <b>Google Chrome</b> で開いてください（スマホではできません）</div>
+
+  <section class="step">
+    <h2><span class="num">1</span>アンケートを自分用にコピー</h2>
+    <p>ファスティング後に送る「アンケート（Googleフォーム）」を、自分のGoogleアカウントにコピーします。</p>
+    <p><a class="btn" href="https://docs.google.com/forms/d/1RH9FzJa12KweS_xE7hQA9JXQ5O8ZbWyjsMWJy1wvH7E/copy" target="_blank" rel="noopener">アンケートをコピーする</a></p>
+    <ol>
+      <li>開いた画面で「<b>コピーを作成</b>」を押す</li>
+      <li>コピーしたフォームの右上「<b>公開</b>」を押して公開する</li>
+      <li>右上の <b>🔗（リンク）</b> マーク →「<b>回答者リンクをコピー</b>」</li>
+    </ol>
+    <p class="small">※ コピーしたフォームの回答は、あなたにだけ届きます。</p>
+  </section>
+
+  <section class="step" id="s2">
+    <h2><span class="num">2</span>コピーしたURLを貼る</h2>
+    <p>手順1でコピーした「回答者リンク」をここに貼り付けてください。</p>
+    <input type="url" id="form" placeholder="https://docs.google.com/forms/d/e/…/viewform" autocomplete="off">
+    <div class="msg" id="msg"></div>
+  </section>
+
+  <section class="step locked" id="s3">
+    <h2><span class="num">3</span>ボタンをブックマークバーに置く</h2>
+    <p>下のピンクのボタンを、マウスで<b>ブックマークバーまでドラッグ</b>してください。</p>
+    <p class="small">ブックマークバーが見えないときは <span class="kbd">⌘</span> + <span class="kbd">Shift</span> + <span class="kbd">B</span>（Windowsは <span class="kbd">Ctrl</span> + <span class="kbd">Shift</span> + <span class="kbd">B</span>）で出てきます。</p>
+    <div class="bm-area" id="bmArea">
+      <a class="bm" id="bm" href="#" onclick="alert('このボタンは押すのではなく、ブックマークバーへドラッグしてください🙏');return false;">エルメに配信登録</a>
+      <p class="small" style="margin:12px 0 0">↑ これを上のブックマークバーへ引っぱる</p>
+    </div>
+    <details>
+      <summary>ドラッグがうまくいかないとき</summary>
+      <ol>
+        <li><button class="btn sub" id="copyBm" type="button" style="padding:6px 14px;font-size:13px">ボタンの中身をコピー</button> を押す</li>
+        <li>ブックマークバーで右クリック →「ページを追加」</li>
+        <li>名前に「エルメに配信登録」、URLの欄にコピーしたものを貼り付けて保存</li>
+      </ol>
+    </details>
+  </section>
+
+  <section class="step locked" id="s4">
+    <h2><span class="num">4</span>エルメで押す</h2>
+    <ol>
+      <li><a href="https://step.lme.jp/" target="_blank" rel="noopener">エルメ</a>にログインする</li>
+      <li>配信を入れたいLINEアカウントを選んで、左メニューの「<b>ステップ配信</b>」を開く</li>
+      <li>ブックマークバーの「<b>エルメに配信登録</b>」を押す</li>
+      <li>出てきた画面で登録先のアカウント名を確認して「<b>登録をはじめる</b>」</li>
+    </ol>
+    <p>5〜10分ほどで完了します。終わるまで画面は閉じずに待っていてね☕</p>
+  </section>
+
+  <section class="step done">
+    <h2><span class="num" style="background:var(--ok)">✓</span>終わったら確認</h2>
+    <ul>
+      <li>「ステップ配信」の一覧に <b>「クロードコード_」で始まる13本</b> ができています</li>
+      <li>お客様のコース（3日・5日・7日・ワンデー）と準備食の開始日（7日前・5日前・3日前・前日）に合うものを選んで、友だちを登録すると配信が始まります</li>
+      <li>登録しただけでは、まだ誰にも届きません</li>
+      <li>1日目はステップ開始直後、2日目以降は毎朝7時に届きます（前日スタート版の1日目は、開始直後・12時・20時）</li>
+    </ul>
+    <p class="small">※ 途中で止まったときは、画面の案内どおりにすれば続きから作れます。ボタンを何回も押さないでね。</p>
+  </section>
+</div>
+
+<script>
+(function(){
+  var SCRIPT='https://glow-gifts.github.io/fs-kz3z19q8/installer.js';
+  var input=document.getElementById('form'),msg=document.getElementById('msg');
+  var s3=document.getElementById('s3'),s4=document.getElementById('s4'),area=document.getElementById('bmArea'),bm=document.getElementById('bm');
+  var code='';
+  function build(url){
+    return "javascript:(function(){window.__FS_FORM=decodeURIComponent('"+encodeURIComponent(url).replace(/'/g,'%27')+"');var s=document.createElement('script');s.src='"+SCRIPT+"?v='+Date.now();document.body.appendChild(s);})();";
+  }
+  function check(){
+    var v=input.value.trim();
+    s3.classList.add('locked');s4.classList.add('locked');area.style.display='none';msg.className='msg';
+    if(!v){msg.textContent='';return}
+    if(/docs\.google\.com\/forms\/d\/[^\/]+\/(edit|copy)/.test(v)&&!/\/forms\/d\/e\//.test(v)){
+      msg.className='msg ng';msg.textContent='これは編集用のURLです。フォーム右上の🔗マーク →「回答者リンクをコピー」で出てくるURLを貼ってね。';return}
+    if(v.indexOf('1RH9FzJa12KweS_xE7hQA9JXQ5O8ZbWyjsMWJy1wvH7E')>=0){
+      msg.className='msg ng';msg.textContent='これはコピー元のURLです。手順1で自分用にコピーしたフォームのURLを貼ってね。';return}
+    if(!/^https:\/\/(docs\.google\.com\/forms\/|forms\.gle\/)\S+$/.test(v)){
+      msg.className='msg ng';msg.textContent='GoogleフォームのURLではないみたい。「https://docs.google.com/forms/…」か「https://forms.gle/…」で始まるURLを貼ってね。';return}
+    msg.className='msg ok';msg.textContent='OK！手順3に進んでね👇';
+    code=build(v);bm.setAttribute('href',code);
+    s3.classList.remove('locked');s4.classList.remove('locked');area.style.display='block';
+  }
+  input.addEventListener('input',check);
+  document.getElementById('copyBm').addEventListener('click',function(){
+    if(!code)return;
+    navigator.clipboard.writeText(code).then(function(){alert('コピーしました。ブックマークのURL欄に貼り付けてね。')},function(){prompt('これをコピーしてね',code)});
+  });
+})();
+</script>
+</body>
+</html>
